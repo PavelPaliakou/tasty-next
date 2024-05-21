@@ -19,23 +19,22 @@ export default function BadgeFilter() {
     "Pakistani",
   ];
 
-  const handleOnClick = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    cuisine: string
-  ) => {
+  function handleOnClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>, cuisine: string) {
     e.preventDefault();
+
     dispatch({
       type: "SELECTED_CUISINE",
       payload: {
         selectedCuisine: cuisine,
       },
     });
-  };
+  }
+
   return (
     <div>
-      {cuisines.map((cuisine, idx) => (
+      {cuisines.map((cuisine, index) => (
         <Badge
-          key={`${cuisine}-${idx}`}
+          key={`${cuisine}-${index}`}
           variant={"outline"}
           className="border-orange-800 text-gray-900 text-lg mx-2 my-1 hover:cursor-pointer bg-orange-50 hover:scale-110 ease-in duration-200"
           onClick={(e) => handleOnClick(e, cuisine)}
