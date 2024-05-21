@@ -41,9 +41,9 @@ export default function RecipeList({ recipes }: { recipes: Array<RecipeType> }) 
               <Image
                 src={recipe.image}
                 alt={recipe.name}
-                fill={true}
+                width={500}
+                height={500}
                 className="bg-cover rounded-md shadow-xl"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </CardHeader>
             <CardContent>
@@ -51,16 +51,16 @@ export default function RecipeList({ recipes }: { recipes: Array<RecipeType> }) 
                 {recipe.name}
               </CardTitle>
             </CardContent>
-            <CardFooter className="flex items-start gap-2 lg:gap-12 lg:flex-row flex-col">
-              <div className="flex flex-col">
+            <CardFooter className="flex items-start gap-2 lg:gap-6 flex-col">
+              <div className="flex flex-row justify-between w-full">
                 <p className="text-lg">Serves</p>
                 <p className="text-gray-800">{recipe.servings}</p>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-row justify-between w-full">
                 <p className="text-lg">Prep Time</p>
                 <p className="text-gray-800">{recipe.prepTimeMinutes} MIN</p>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-row justify-between w-full">
                 <p className="text-lg">Cook Time</p>
                 <p className="text-gray-800">{recipe.cookTimeMinutes} MIN</p>
               </div>

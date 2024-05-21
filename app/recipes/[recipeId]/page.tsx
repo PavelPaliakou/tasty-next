@@ -11,12 +11,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({
-  params,
-}: {
-  params: { recipeId: string };
-}) {
+export default async function Page({ params }: { params: { recipeId: string } }) {
   const { recipeId } = params;
+  console.log(recipeId);
   const response = await fetch(`https://dummyjson.com/recipes/${recipeId}`);
   const recipe = await response.json();
 
@@ -69,9 +66,9 @@ export default async function Page({
           <Image
             alt={recipe.name}
             src={recipe.image}
-            width="400"
-            height="400"
-            className="w-96 h-96 lg:h-[600px] lg:w-[600px]"
+            width={400}
+            height={400}
+            className="w-96 lg:w-[600px]"
           />
         </div>
       </div>
